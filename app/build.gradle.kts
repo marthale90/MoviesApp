@@ -10,6 +10,18 @@ android {
     namespace = "com.test.moviesapp"
     compileSdk = 35
 
+    flavorDimensions += "environment"
+    productFlavors {
+        create("staging") {
+            dimension = "environment"
+            manifestPlaceholders["applicationLabel"] = "StagingMoviesApp"
+            applicationId = "com.test.moviesapp.stg"
+            isDefault = true
+        }
+        create("production") {
+            dimension = "environment"
+        }
+    }
     defaultConfig {
         applicationId = "com.test.moviesapp"
         minSdk = 28
@@ -21,8 +33,11 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             isMinifyEnabled = false
+        }
+        release {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
