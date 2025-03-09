@@ -79,4 +79,5 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation(libs.bundles.networking)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 }
