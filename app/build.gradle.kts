@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.detekt.plugin)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.secrets.gradle.plugin)
 }
 
 android {
@@ -35,6 +36,10 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 detekt {
@@ -42,6 +47,10 @@ detekt {
     config.setFrom(file("../config/detekt/detekt.yml"))
     buildUponDefaultConfig = true
     autoCorrect = true
+}
+
+secrets {
+    defaultPropertiesFileName = "secrets.properties"
 }
 
 dependencies {
