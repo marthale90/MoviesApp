@@ -3,4 +3,5 @@ package com.test.moviesapp
 object EnvironmentConstants {
     const val API_TOKEN = BuildConfig.STAGING_API_TOKEN
     const val BASE_URL = BuildConfig.STAGING_BASE_URL
+    const val IMAGE_BASE_URL = BuildConfig.STAGING_BASE_URL_IMAGE
 }
