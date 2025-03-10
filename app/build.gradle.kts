@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.detekt.plugin)
     alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.secrets.gradle.plugin)
+    alias(libs.plugins.firebase.crashlytics)
 }
 
 android {
@@ -82,4 +83,6 @@ dependencies {
     implementation(libs.bundles.networking)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.coil)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.crashlytics.ktx)
 }

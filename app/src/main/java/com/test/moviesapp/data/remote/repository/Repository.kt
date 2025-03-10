@@ -1,6 +1,7 @@
 package com.test.moviesapp.data.remote.repository
-import android.util.Log
+
 import com.test.moviesapp.commons.utils.ApiResult
+import com.test.moviesapp.commons.utils.Logger
 import com.test.moviesapp.data.remote.RetrofitClient
 import com.test.moviesapp.data.remote.model.ErrorResponseModel
 import com.test.moviesapp.domain.ErrorDomainModel
@@ -26,13 +27,13 @@ class Repository {
                 ApiResult.Error(mapToDomainError(response.code(), response.errorBody()?.string()))
             }
         } catch (e: IOException) {
-            Log.e(_tag, e.localizedMessage ?: "", e)
+            Logger.log(tag = _tag, message = e.localizedMessage ?: "", throwable = e)
             ApiResult.Error(ErrorDomainModel.NetworkError)
         } catch (e: HttpException) {
-            Log.e(_tag, e.localizedMessage ?: "", e)
+            Logger.log(tag = _tag, message = e.localizedMessage ?: "", throwable = e)
             ApiResult.Error(mapToDomainError(e.code(), e.response()?.errorBody()?.string()))
         } catch (e: Exception) {
-            Log.e(_tag, e.localizedMessage ?: "", e)
+            Logger.log(tag = _tag, message = e.localizedMessage ?: "", throwable = e)
             ApiResult.Error(ErrorDomainModel.UnknownError)
         }
     }
@@ -46,10 +47,10 @@ class Repository {
                 )
             }
             val message = parsedError?.statusMessage ?: "Unknown API error"
-            Log.e(_tag, message)
+            Logger.log(tag = _tag, message = message)
             ErrorDomainModel.ApiError(code, message)
         } catch (e: Exception) {
-            Log.e(_tag, e.localizedMessage ?: "", e)
+            Logger.log(tag = _tag, message = e.localizedMessage ?: "", throwable = e)
             ErrorDomainModel.UnknownError
         }
     }
