@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MoviesApp</string>
+    <string name="error_network">Error de red. Por favor revisa tu conexión.</string>
+    <string name="error_request_count">Has llegado al límite de requests</string>
+    <string name="error_generic_message">Ha ocurrido un error</string>
+    <string name="error_generic">%1$s - %2$s</string>
 </resources>
