@@ -72,6 +72,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     is MovieUIModel.Error -> {
+                        binding.progressBar.isVisible = false
                         showMessage(result.error)
                     }
                 }
