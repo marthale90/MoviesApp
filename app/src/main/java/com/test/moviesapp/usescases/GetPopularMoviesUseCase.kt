@@ -8,7 +8,7 @@ import com.test.moviesapp.domain.MovieDomainModel
 class GetPopularMoviesUseCase(
     private val repository: Repository,
     private val page: Int = 1,
-    private val language: String = Constants.Remote.LANGUAGE_ES
+    private val language: String = Constants.Remote.LANGUAGE_EN
 ) {
 
     suspend fun invoke(): ApiResult<List<MovieDomainModel>> =
