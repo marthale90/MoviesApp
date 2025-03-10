@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="@dimen/medium_spacing">
+
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/modal_poster_height"
+        android:layout_marginBottom="@dimen/small_spacing"
+        android:scaleType="centerInside"
+        tools:ignore="ContentDescription"
+        tools:src="@drawable/example_poster" />
+
+
+    <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_spacing"
+        tools:text="El abismo secreto" />
+
+    <TextView
+        android:id="@+id/tvGenres"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_spacing"
+        android:textColor="@color/darker_gray"
+        tools:text="Romance, Ciencia ficción, Suspence" />
+
+    <TextView
+        android:id="@+id/tvReleaseDate"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textColor="@color/holo_blue_dark"
+        android:textSize="16sp"
+        tools:text="Fecha de estreno: 2025-02-13" />
+
+    <TextView
+        android:id="@+id/tvOverview"
+        style="@style/Overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium_spacing"
+        android:justificationMode="inter_word"
+        tools:text="Lorem ipsum dolor sit, amet consectetur." />
+
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/close_label" />
+</LinearLayout>

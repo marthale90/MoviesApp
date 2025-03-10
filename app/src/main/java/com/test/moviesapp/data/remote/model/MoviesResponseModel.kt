@@ -1,5 +1,6 @@
 package com.test.moviesapp.data.remote.model
 
+import com.test.moviesapp.commons.Constants
 import com.test.moviesapp.domain.MovieDomainModel
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -19,7 +20,8 @@ data class MoviesResponseModel(
             title = it.title,
             posterPath = it.posterPath,
             overview = it.overview,
-            releaseDate = it.releaseDate
+            releaseDate = it.releaseDate,
+            genres = it.genreIds.map { genreId -> Constants.UI.GENRE_MOVIES[genreId] ?: "" }
         )
     }
 }

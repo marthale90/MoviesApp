@@ -4,4 +4,6 @@
     <string name="error_request_count">Has llegado al límite de requests</string>
     <string name="error_generic_message">Ha ocurrido un error</string>
     <string name="error_generic">%1$s - %2$s</string>
+    <string name="close_label">Cerrar</string>
+    <string name="release_date_label">Fecha de estreno: %1$s</string>
 </resources>
